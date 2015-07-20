@@ -54,7 +54,8 @@ describe('Visual monitor testing', function() {
           '.total',
           '.cost',
           '#number'
-        ]
+        ],
+        screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
       }, shoovWebdrivercss.processResults)
       .call(done);
   });
