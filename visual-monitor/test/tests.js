@@ -43,14 +43,18 @@ describe('Visual monitor testing', function() {
     shoovWebdrivercss.after(done);
   });
 
-  it('should show the home page',function(done) {
+  it('should show the buy now page',function(done) {
     client
-      .url(baseUrl)
-      .webdrivercss(testName + '.homepage', {
+      .url(baseUrl + "/platform/buy-now")
+      // Hide the cookies popup.
+      .click('#popup-buttons button')
+      .webdrivercss(testName + '.buy-now', {
         name: '1',
-        exclude: [],
-        remove: [],
-        screenWidth: selectedCaps == 'chrome' ? [320, 640, 960, 1200] : undefined,
+        exclude: [
+          '.total',
+          '.cost',
+          '#number'
+        ]
       }, shoovWebdrivercss.processResults)
       .call(done);
   });
