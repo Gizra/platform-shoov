@@ -42,25 +42,16 @@ describe('Live testing', function() {
     shoovWebdrivercss.after(done);
   });
 
-  it('should show the home page',function(done) {
-    client
-      .url(baseUrl)
-      .webdrivercss(testName, {
-        name: 'homepage',
-        exclude: [
-          '',
-        ]
-      }, shoovWebdrivercss.processResults)
-      .call(done);
-  });
-
   it('should show the buy now page',function(done) {
     client
       .url(baseUrl + "/platform/buy-now")
+      .click('#popup-buttons button')
       .webdrivercss(testName, {
         name: 'buy-now',
         exclude: [
-          '',
+          '.total',
+          '.cost',
+          '#number',
         ]
       }, shoovWebdrivercss.processResults)
       .call(done);
