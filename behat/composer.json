@@ -1,0 +1,10 @@
+{
+  "name": "Behat tests for https://marketplace.commerceguys.com",
+  "description": "Functional testing for https://marketplace.commerceguys.com site.",
+  "require": {
+    "drupal/drupal-extension": "~3.0"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
